@@ -67,7 +67,7 @@ function alertProduct() {
                 });
             }
             else {
-                
+                $(".boxAlert .numMessage").text(0);
             }
 
         }
