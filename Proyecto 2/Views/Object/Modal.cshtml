@@ -1,0 +1,295 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+    ViewData["Title"] = "";
+}
+<div id="dialog" class="dialog">
+	<div class="content">
+		<h2>Registrar Factura <span class="step">1-3</span></h2>
+		<aside class="contentDialog">
+			<aside class="contentBox contentBox-1">
+				<h3>Datos del Proveedor</h3>
+				<div class="contentBoxBody">
+					<div class="boxBody">
+						<div class="contentRow">
+							<div class="form__group field">
+								<input type="date" class="form__field dateOrder" placeholder="Fecha de Pedido" name="dateOrder" id='dateOrder' autocomplete="off" />
+								<span class="iconRequire"><i class="fa-solid fa-asterisk"></i></span>
+								<label for="dateOrder" class="form__label">Fecha de Pedido</label>
+							</div>
+						</div>
+						<div class="contentRow">
+							<div class="form__group field">
+								<input type="date" class="form__field dateDeliver" placeholder="Fecha de Entrega" name="dateDeliver" id='dateDeliver' autocomplete="off" />
+								<span class="iconRequire"><i class="fa-solid fa-asterisk"></i></span>
+								<label for="dateDeliver" class="form__label">Fecha de Entrega</label>
+							</div>
+						</div>
+						<div class="contentRow">
+							<div class="form__group field">
+								<input type="number" class="form__field invoice" placeholder="Número de Factura" name="numInvoice" id='invoice' autocomplete="off" />
+								<span class="iconRequire"><i class="fa-solid fa-asterisk"></i></span>
+								<label for="numInvoice" class="form__label">Número de Factura</label>
+							</div>
+						</div>
+					</div>
+					<div class="boxBody">
+						<div class="contentRow">
+							<div class="form__group field">
+								<input type="text" class="form__field nameP" placeholder="Nombre de Proveedor" name="nameP" id='nameP' autocomplete="off" />
+								<span class="iconRequire"><i class="fa-solid fa-asterisk"></i></span>
+								<label for="nameP" class="form__label">Nombre de Proveedor</label>
+							</div>
+						</div>
+						<div class="contentRow">
+							<div class="form__group field">
+								<input type="text" class="form__field nameE" placeholder="Empresa Proveedora" name="enterpriseP" id='nameE' autocomplete="off" />
+								<span class="iconRequire"><i class="fa-solid fa-asterisk"></i></span>
+								<label for="enterpriseP" class="form__label">Empresa Proveedora</label>
+							</div>
+						</div>
+						<div class="contentRow">
+							<div class="form__group field">
+								<input type="text" class="form__field nameR" placeholder="Nombre del Receptor" name="nameR" id='nameR' autocomplete="off" />
+								<span class="iconRequire"><i class="fa-solid fa-asterisk"></i></span>
+								<label for="nameR" class="form__label">Nombre del Receptor</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="contentBoxButton">
+					<button class="btnNext">Siguiente</button>
+				</div>
+			</aside>
+			<aside class="contentBox contentBox-2 right">
+				<h3>Producto(s)</h3>
+				<div class="contentBoxBody">
+					<div class="boxBody">
+						<div class="contentRow">
+							<div class="form__group field">
+								<input type="text" class="form__field productN" placeholder="Nombre del Producto" name="productN" id='productN' autocomplete="off" />
+								<span class="iconRequire"><i class="fa-solid fa-asterisk"></i></span>
+								<label for="productN" class="form__label">Nombre del Producto</label>
+							</div>
+						</div>
+						<div class="contentRow">
+							<div class="form__group field">
+								<input type="number" class="form__field price" placeholder="Precio/Unidad" name="price" id='price' autocomplete="off" />
+								<span class="iconRequire"><i class="fa-solid fa-asterisk"></i></span>
+								<label for="price" class="form__label">Precio/Unidad</label>
+							</div>
+						</div>
+					</div>
+					<div class="boxBody">
+						<div class="contentRow">
+							<div class="form__group field">
+								<select class="form__field unit" placeholder="Unidad" name="unit" id='unit' autocomplete="off">
+									<option value="" disabled selected>Seleccione una medida</option>
+									<option value="u">Unidad</option>
+									<option value="m">Litro</option>
+									<option value="l">Metro</option>
+								</select>
+								<span class="iconRequire"><i class="fa-solid fa-asterisk"></i></span>
+								<label for="unit" class="form__label">Unidad</label>
+							</div>
+						</div>
+					</div>
+					<div class="boxBody">
+						<div class="contentRow">
+							<div class="form__group field">
+								<input type="number" class="form__field countP" placeholder="Cantidad Entrante" name="countP" id='countP' autocomplete="off" />
+								<span class="iconRequire"><i class="fa-solid fa-asterisk"></i></span>
+								<label for="countP" class="form__label">Cantidad Entrante</label>
+							</div>
+							<div class="disabled form__group field">
+								<input type="number" class="form__field countMin" placeholder="Cantidad Mínima" name="countMin" id='countMin' autocomplete="off" />
+								<span class="iconRequire"><i class="fa-solid fa-asterisk"></i></span>
+								<label for="countMin" class="form__label">Cantidad Mínima</label>
+							</div>
+							<div class="disabled form__group field">
+								<input type="number" class="form__field countMax" placeholder="Cantidad Máxima" name="countMax" id='countMax' autocomplete="off" />
+								<span class="iconRequire"><i class="fa-solid fa-asterisk"></i></span>
+								<label for="countMax" class="form__label">Cantidad Máxima</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="contentBoxButton">
+					<button class="btnPrev">Anterior</button>
+					<button class="btnClean">Limpiar</button>
+					<button class="btnAdd">Agregar</button>
+					<button class="btnNext">Siguiente</button>
+				</div>
+			</aside>
+			<aside class="contentBox contentBox-3 right">
+				<h3>Revisión de Factura</h3>
+				<div class="contentBoxBody">
+					<div class="boxBody">
+						<h4>Datos de Proveedor</h4>
+						<table>
+							<thead>
+								<tr>
+									<th>F.Pedido</th>
+									<th>F.Entrega</th>
+									<th>#Factura</th>
+									<th>Enviado Con</th>
+									<th>Empresa</th>
+									<th>Recibido Por</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+					<div class="boxBody">
+						<h4>Productos</h4>
+						<table>
+							<thead>
+								<tr>
+									<th>#Cod</th>
+									<th>Producto</th>
+									<th>Unidad</th>
+									<th>Precio/U</th>
+									<th>Cantidad</th>
+									<th>Cant/Mín</th>
+									<th>Cant/Máx</th>
+									<th>Opción</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+				<div class="contentBoxButton">
+					<button class="btnPrev">Anterior</button>
+					<button class="btnFinish">Registrar</button>
+				</div>
+			</aside>
+		</aside>
+		<button aria-label="close" class="x closeModal">❌</button>
+	</div>
+
+	<link rel="stylesheet" href="~/css/object/modal.css" />
+	<script src="~/js/object/modal.js"></script>
+	<aside class="contentPopUp contentPopUp-2">
+		<aside class="boxPopUp">
+			<aside class="leftPopUp">
+			</aside>
+			<aside class="rightPopUp">
+				<span class="btnClosePopUp"><i class="fa-regular fa-rectangle-xmark"></i></span>
+			</aside>
+		</aside>
+	</aside>
+</div>
+<div id="dialog2" class="dialog2">	
+	<div class="content">
+		<h2>Salida de Productos <span class="step">1-3</span></h2>
+		<aside class="contentDialog">
+			<aside class="contentBox contentBox-1">
+				<h3>Datos del Pedido</h3>
+				<div class="contentBoxBody">
+					<div class="boxBody">
+						<div class="contentRow">
+							<div class="form__group field">
+								<input type="number" class="form__field ticket" placeholder="Número de Pedido" name="numTicket" id='ticket' autocomplete="off" disabled/>
+								<span class="iconRequire"><i class="fa-solid fa-asterisk"></i></span>
+								<label for="numTicket" class="form__label">Número de Pedido</label>
+							</div>
+						</div>
+						<div class="contentRow">
+							<div class="form__group field">
+								<input type="date" class="form__field dateOrder" placeholder="Fecha de Pedido" name="dateOrder" id='dateOrder' autocomplete="off" />
+								<span class="iconRequire"><i class="fa-solid fa-asterisk"></i></span>
+								<label for="dateOrder" class="form__label">Fecha de Pedido</label>
+							</div>
+						</div>
+						<div class="contentRow">
+							<div class="form__group field">
+								<input type="text" class="form__field nameT" placeholder="Nombre del Técnico" name="nameT" id='nameT' autocomplete="off" />
+								<span class="iconRequire"><i class="fa-solid fa-asterisk"></i></span>
+								<label for="nameT" class="form__label">Nombre del Técnico</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="contentBoxButton">
+					<button class="btnNext">Siguiente</button>
+				</div>
+			</aside>
+			<aside class="contentBox contentBox-2 right">
+				<h3>Producto(s)</h3>
+				<div class="contentBoxBody">
+					<div class="boxBody">
+						<h4>Productos Seleccionados</h4>
+						<table>
+							<thead>
+								<tr>
+									<th>#Cod</th>
+									<th>Producto</th>
+									<th>Unidad</th>
+									<th>Cantidad</th>
+									<th>Precio</th>
+									<th>Opción</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+				<div class="contentBoxButton">
+					<button class="btnPrev">Anterior</button>
+					<button class="btnNext">Siguiente</button>
+				</div>
+			</aside>
+			<aside class="contentBox contentBox-3 right">
+				<h3>Revisión de Factura</h3>
+				<div class="contentBoxBody">
+					<div class="boxBody">
+						<h4>Datos del Pedido</h4>
+						<table>
+							<thead>
+								<tr>
+									<th>#.Pedido</th>
+									<th>F.Pedido</th>
+									<th>Emitido Por</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+					<div class="boxBody">
+						<h4>Productos Seleccionados</h4>
+						<table>
+							<thead>
+								<tr>
+									<th>#Cod</th>
+									<th>Producto</th>
+									<th>Unidad</th>									
+									<th>Cantidad</th>
+									<th>Precio</th>
+									<th>Opción</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+				<div class="contentBoxButton">
+					<button class="btnPrev">Anterior</button>
+					<button class="btnFinish">Emitir</button>
+				</div>
+			</aside>
+		</aside>
+		<button aria-label="close" class="x closeModal">❌</button>
+	</div>	
+	<aside class="contentPopUp contentPopUp-3">
+		<aside class="boxPopUp">
+			<aside class="leftPopUp">
+			</aside>
+			<aside class="rightPopUp">
+				<span class="btnClosePopUp"><i class="fa-regular fa-rectangle-xmark"></i></span>
+			</aside>
+		</aside>
+	</aside>
+</div>

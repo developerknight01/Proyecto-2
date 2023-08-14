@@ -1,0 +1,477 @@
+﻿@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+    --vs-primary: 29 92 255;
+}
+
+/*Dialog Styles*/
+.dialog,.dialog2 {
+    padding: 1rem 3rem;    
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    padding-top: 2rem;    
+    border: 0;
+    z-index: -1;
+    opacity: 0%;
+    visibility: hidden;
+    overflow-x: hidden;
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);    
+}
+.dialog.active,.dialog2.active{
+    -webkit-animation: fadeIn 1s ease both;
+    animation: fadeIn 1s ease both;
+    background: rgba(255, 255, 255, 0.4);    
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    visibility:visible;
+    z-index:10;
+}
+.dialog.active.alt,.dialog2.active.alt{
+    z-index:0 !important;
+}
+.dialog .content, .dialog2 .content{
+    width:100%;
+    padding: 1rem 3rem;
+    background: white;            
+    padding-top: 2rem;    
+    border: 0;
+    border-radius:10px;
+}
+.dialog.close, .dialog2.close{
+    transition:1s ease-in-out;
+    -webkit-animation: fadeOut 1s ease both;
+    animation: fadeOut 1s ease both;
+    background: rgb(255, 255, 255, 0.00);
+    z-index: -1;
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+}
+.dialog .x,.dialog2 .x {
+    filter: grayscale(1);
+    border: none;
+    background: none;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    transition: ease filter, transform 0.3s;
+    cursor: pointer;
+    transform-origin: center;
+}
+
+.dialog .x:hover,.dialog2 .x:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.dialog h2,.dialog2 h2 {
+    font-weight: 600;
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+.dialog p, .dialog2 p {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    padding: 0.5rem 0;
+}
+
+.dialog p a:visited, .dialog2 p a:visited {
+    color: rgb(var(--vs-primary));
+}
+.dialog .contentDialog, .dialog2 .contentDialog{
+    width:100%;
+    height:60vh;
+    padding:5px;
+    display:block;    
+}
+.contentDialog .contentBox{
+    width:90%;    
+    margin: auto;
+    left:0;
+    right:0;
+    padding:25px;
+    display:block;
+    position:absolute;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(0.25turn,white -20%,var(--mainSecondColor) 50%, white 120%);
+    border-image-slice: 1;
+    z-index:1;
+    visibility:visible;
+    opacity:100%;
+    left:0%;
+    transition:.5s ease-in-out;
+}
+.contentDialog .contentBox.right{
+    opacity:0%;
+    visibility:hidden;
+    z-index:-1;
+    left:100%;
+}
+.contentDialog .contentBox.left{
+    opacity:0%;
+    visibility:hidden;
+    z-index:-1;
+    left:-100%;
+}
+.contentDialog .contentBox-2{
+    overflow:auto;
+    transition:.35s ease-in-out;
+    min-height:25vh;
+    max-height:75vh;
+}
+.contentDialog .contentBox h3{
+    width:100%;
+    height:75px;
+    padding:10px;
+    border-radius:5px;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(0.25turn,white -20%,var(--mainSecondColor) 50%, white 120%);
+    border-image-slice: 1;
+    display:block;
+    transition:.5s ease-in-out;
+}
+.contentDialog .contentBox .addItem{
+    color: forestgreen !important;
+    transition:.35s ease-in-out;
+}
+.contentDialog .contentBox .addItem svg:hover{
+    color: limegreen !important;
+    animation-name: wiggle;
+    animation-iteration-count: 5;
+    animation-duration: 3s;
+}
+.contentDialog .contentBox .contentBoxBody{
+    width:100%;       
+        height:240px;
+    display:inline-flex;
+    overflow:auto;
+    transition:.5s ease-in-out;
+}
+.contentDialog .contentBox-3 .contentBoxBody{
+    display:block;
+}
+.contentDialog .contentBox .contentBoxBody.highRow{
+    animation-name:highRow;
+    animation-iteration-count:5;
+    animation-duration:1s;
+}
+.contentDialog .contentBox-2 .contentBoxBody:nth-child(odd){
+    background-color:#0000000d;
+}
+.contentDialog .contentBox-1 .contentBoxBody .boxBody{
+    width:50%;
+    margin:auto;
+}
+.dialog .contentDialog .contentBox-2 .contentBoxBody .boxBody{
+    width:50%;
+    display:block;
+}
+.dialog2 .contentDialog .contentBox-2 .contentBoxBody .boxBody {
+    width: 100%;
+    display: block;
+}
+.contentDialog .contentBox-3 .contentBoxBody .boxBody{
+    width:100%;
+    display:block;
+}
+.contentDialog .contentBox .contentBoxBody .contentRow{
+    width:100%;    
+}
+.contentDialog .contentBox-3 .contentBoxBody{
+    padding:15px;
+}
+.contentDialog .contentBox-3 .contentBoxBody .boxBody{
+    padding:15px;
+    margin-bottom:20px;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(0.25turn,white -20%,black 50%, white 120%);
+    border-image-slice: 1;
+}
+.contentDialog .contentBoxBody .boxBody table{
+    width:100%;    
+}
+.contentDialog .contentBoxBody .boxBody table tbody tr{
+    height:45px;    
+}
+.contentDialog .contentBoxBody .boxBody table tbody tr:nth-child(even){
+    background-color:#0000000d;
+}
+.contentDialog .contentBoxBody .boxBody table tbody tr td{
+    padding:15px;
+}
+.contentDialog .contentBoxBody .boxBody table tbody tr td input[type=number]{
+    border:none;
+    background-color:transparent;
+    height:50px;
+    border-bottom:2px solid deepskyblue;
+    outline:none;
+    transition:.35s ease-in-out;
+}
+.contentDialog .contentBoxBody .boxBody table tbody tr td input.highInputAlt{
+    animation-name: highInputAlt;
+    animation-iteration-count: 5;
+    animation-duration: 10s;
+}
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    height:unset;
+    visibility:visible;
+    opacity:100%;
+    transition:.35s ease-in-out;
+}
+.form__group.disabled{
+    background:red;
+    height:0;
+    width:0;
+    visibility:hidden;
+    opacity:0%;
+}
+.form__group .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #000;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+.form__group.disabled .form__field{
+    width:0%;
+}
+.form__field::placeholder {
+    color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+    z-index:-1;
+}
+.form__group.disabled .form__label{
+    font-size:0em;
+}
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+}
+.form__field:hover {
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #11998e;
+    font-weight: 700;
+}
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
+
+.form__group .iconRequire {
+    position: absolute;
+    font-size: 16px;
+}
+.form__group.disabled .iconRequire{
+    font-size:0px;
+}
+.form__group .iconRequire.alert{
+    color:red;
+}
+.contentBox .contentBoxButton{
+    margin-top:25px;
+}
+.contentBox .contentBoxButton button{
+    border-radius:5px;
+    border:none;
+    font-size:20px;
+    font-weight:100;
+    padding:10px;
+    width:120px;
+    height:50px;
+    transition:.35s ease-in-out;
+}
+.contentBox .contentBoxButton button.btnNext{
+    background-color:dodgerblue;
+    color:white;
+}
+.contentBox .contentBoxButton button.btnNext:hover{
+    background-color:blue;
+    font-weight:600;
+}
+.contentBox .contentBoxButton button.btnNext:active{
+    background-color:royalblue;
+    font-weight:600;
+}
+.contentBox .contentBoxButton button.btnPrev{
+    background-color:gray;
+    color:white;
+}
+.contentBox .contentBoxButton button.btnPrev:hover{
+    background-color:dimgray;
+    font-weight:600;
+}
+.contentBox .contentBoxButton button.btnPrev:active{
+    background-color:slategray;
+    font-weight:600;
+}
+.contentBox .contentBoxButton button.btnClean{
+    background-color:orangered;
+    color:white;
+}
+.contentBox .contentBoxButton button.btnClean:hover{
+    background-color:orange;
+    font-weight:600;
+}
+.contentBox .contentBoxButton button.btnClean:active{
+    background-color:red;
+    font-weight:600;
+}
+.contentBox .contentBoxButton button.btnAdd,
+.contentBox .contentBoxButton button.btnFinish{
+    background-color:forestgreen;
+    color:white;
+}
+.contentBox .contentBoxButton button.btnAdd:hover,
+.contentBox .contentBoxButton button.btnFinish:hover{
+    background-color:darkgreen;
+    font-weight:600;
+}
+.contentBox .boxBody table .deleteItem{
+    color:red !important;
+}
+.contentBox .boxBody table .deleteItem:hover svg{
+    animation-name: wiggle;
+    animation-iteration-count: 5;
+    animation-duration: 3s;
+}
+.contentBox .contentBoxButton button.btnAdd:active,
+.contentBox .contentBoxButton button.btnFinish:active{
+    background-color:green;
+    font-weight:600;
+}
+@media screen and (max-width:1365px){
+    .contentDialog .contentBox-2 .contentBoxBody{
+        display:block !important;
+    }
+    .contentDialog .contentBox-2 .contentBoxBody .boxBody{
+        width:100% !important;
+    }
+}
+@media screen and (max-width:950px){
+    .contentDialog .contentBox .contentBoxBody {
+        display: block !important;
+    }
+    .contentDialog .contentBox-1 .contentBoxBody .boxBody{
+        width:100% !important;
+    }
+    .contentDialog .contentBox .contentBoxBody .boxBody{
+        display:block !important;
+    }
+}
+@media screen and (max-width:630px){
+    .dialog, .dialog2 {
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px
+    }
+}
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+@keyframes wiggle {
+    0%, 7% {
+        transform: rotateZ(0);
+        transform: scale(1);
+    }
+
+    15% {
+        transform: rotateZ(-15deg);
+    }
+
+    20% {
+        transform: rotateZ(10deg);
+    }
+
+    25% {
+        transform: rotateZ(-10deg);
+        transform: scale(1.3);
+    }
+
+    30% {
+        transform: rotateZ(6deg);
+    }
+
+    35% {
+        transform: rotateZ(-4deg);
+    }
+
+    40%, 100% {
+        transform: rotateZ(0);
+        transform: scale(1);
+    }
+}
+@keyframes highRow{
+    0%{
+        background-color:transparent;
+    }
+    50% {
+        background-color: #005a1829;
+    }
+    100%{
+        background-color:transparent;
+    }
+}

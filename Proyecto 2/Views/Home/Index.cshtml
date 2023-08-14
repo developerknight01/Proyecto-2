@@ -2,7 +2,70 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<aside class="contentMain contentStock">
+    <aside class="rowHead">
+        <h4 class="hHeadTitle">
+            Inicio
+        </h4>
+    </aside>
+    <aside class="rowBody">
+        <div class="card">
+            <div class="table-title">
+                <h2>Inventario</h2>
+            </div>
+            <div class="button-container">
+                <span><input type="number" class="tbSearch" placeholder="#"/></span>
+                <button class="alert" title="Buscar Producto">
+                    <span class="iconButton"><i class="fa-solid fa-magnifying-glass"></i></span>
+                </button>
+                <button class="danger" title="Eliminar lo seleccionado">
+                    <span class="iconButton"><i class="fa-regular fa-trash-can"></i></span>
+                </button>
+                <button class="primary" title="Agregar Factura">
+                    <span class="iconButton"><i class="fa-solid fa-file-circle-plus"></i></span>
+                </button>
+                <button class="secondary" title="Solicitud de Retiro de Producto">
+                    <span class="iconButton"><i class="fa-solid fa-file-import"></i></span>
+                </button>
+            </div>
+            <div class="table-concept">
+                <input class="table-radio" type="radio" name="table_radio" id="table_radio_0" checked="checked" />
+                <div class="table-display">
+                    Mostrando 1 a 20
+                    de 20 items
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>#Cod <span class="iconTool iconTool-1"><i class="fa-solid fa-arrow-down-1-9"></i></span></th>
+                            <th>Nombre <span class="iconTool iconTool-2"><i class="fa-solid fa-arrow-down-a-z"></i></span></th>
+                            <th>Unidad <span class="iconTool iconTool-3"><i class="fa-solid fa-arrow-down-1-9"></i></span></th>
+                            <th>Precio/u <span class="iconTool iconTool-4"><i class="fa-solid fa-arrow-down-1-9"></i></span></th>
+                            <th>Disponible <span class="iconTool iconTool-5"><i class="fa-solid fa-arrow-down-1-9"></i></span></th>
+                            <th>Cantidad Mín <span class="iconTool iconTool-6"><i class="fa-solid fa-arrow-down-1-9"></i></span></th>
+                            <th>Cantidad Máx <span class="iconTool iconTool-7"><i class="fa-solid fa-arrow-down-1-9"></i></span></th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>                        
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <label class="disabled" for="table_radio_-1">&laquo; Atrás</label>
+                    <label class="active" for="table_radio_0" id="table_pager_0">1</label>
+                    <label class="disabled" for="table_radio_0">Siguiente &raquo;</label>
+                </div>                
+            </div>
+        </div>
+    </aside>
+    <aside class="boxAlert">
+        <span class="iconButton iconAlt3">
+            <i class="fa-regular fa-envelope"></i>
+        </span>
+        <label class="numMessage">
+            0
+        </label>
+    </aside>    
+</aside>
+

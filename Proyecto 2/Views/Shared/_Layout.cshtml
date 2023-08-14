@@ -4,46 +4,79 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Proyecto_2</title>
+    <link rel="icon" href="~/images/logoicon1.ico" type="image/png" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/all.css">
+    <link rel="stylesheet" href="~/lib/three-dots-master/dist/three-dots.css">    
+    <link rel="stylesheet" href="~/css/object/messagePopUp.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>    
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Proyecto_2.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Proyecto_2</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <aside class="loadBox active">
+            <div class="objectLoad">
+                <div class="dot-pulse"></div>
+            </div>            
+        </aside>
+        <section class="header">
+            <span class="menuBar"><i class="fa-solid fa-bars"></i></span>
+            <aside class="boxHeader">
+                <aside class="boxOption">
+                    <section class="headerpanel">
+                        <nav class="menuLeft">
+                            <ul class="navMenu">
+                                <li class="navOption active">
+                                    <span class="navItem"><span class="icon home"><i class="fa-solid fa-house"></i></span> Inicio</span>
+                                </li>
+                                <li class="navOption">
+                                    <span class="navItem"><span class="icon team"><i class="fa-solid fa-file-invoice-dollar"></i></span> Facturar</span>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                </aside>
+            </aside>
+            <aside class="boxOptionAlt">
+                <aside class="boxOption">
+                    <section class="headerLeft">
+                        <nav class="menuLeft">
+                        </nav>
+                    </section>
+                </aside>
+            </aside>            
+        </section>
+        <section class="headerlogo">
+            <aside class="boxImg">
+                <img src="~/images/logo1.png" alt="Logo">
+            </aside>
+        </section>
+        <aside id="boxBtnUpPage" class="boxBtnUpPage">
+            <button id="btnUpPage">
+                <i class="fa-solid fa-circle-up"></i>
+            </button>
+        </aside>
+        <aside class="contentPopUp contentPopUp-0">
+            <aside class="boxPopUp">
+                <aside class="leftPopUp">
+                </aside>
+                <aside class="rightPopUp">
+                    <span class="btnClosePopUp"><i class="fa-regular fa-rectangle-xmark"></i></span>
+                </aside>
+            </aside>
+        </aside>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Proyecto_2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/object/messagePopUp.js"></script>
+    <script src="~/lib/fontawesome/js/all.js"></script>
+    <script src="~/lib/scroll-utility.js"></script>
+    <script src="~/lib/jquery-ui/jquery-ui.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
