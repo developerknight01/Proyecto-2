@@ -42,8 +42,8 @@ function alertProduct() {
             if (result != "empty") {
                 $(".boxAlert .numMessage").text(result.split("*").length-1);
                 $(".mainContentSetup .setupBody ul:nth-child(1) li"). remove()
-                for (var i = 0; i < result.split("*").length - 1; i++) {
-                    $(".mainContentSetup .setupBody ul").append(
+                for (var i = 0; i < result.split("*").length - 1; i++) {                    
+                    $(".mainContentSetup .setupBody ul:first-child").append(
                         "<li class='checkAlert alert-"+i+"'><label>" + codP[result.split("*")[i].split("+")[0].length] + "" + result.split("*")[i].split("+")[0] +
                             "</label><ul>" +
                                 "<li>" + result.split("*")[i].split("+")[1] + "</li>" +
